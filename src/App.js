@@ -1,32 +1,21 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes, Link, useParams, Switch, useRouteMatch } from 'react-router-dom'
-import Screen1 from './Screen1'
-import Screen2 from './About'
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-function App(props) {
-  return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to Mobcoder</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
-      <Routes>
-        <Route exact path="/" element={<Screen1 />} />
-        <Route exact path="/about" element={<Screen2 />} />
-
-      </Routes>
-    </Router>
-  );
+    );
+  }
 }
 
 export default App;
-
